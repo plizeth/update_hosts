@@ -1,0 +1,10 @@
+---
+- name: Update line in file
+  hosts: all 
+  tasks:
+  - name: Replace line
+    lineinfile:
+      path: /etc/hosts
+      regexp: '^127\.0\.0\.1'
+      line: 127.0.0.1 localhost
+      backup: yes
